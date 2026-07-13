@@ -2,6 +2,7 @@ name: Get Hot News
 
 on:
   schedule:
+    - cron: "0 2 * * *"  # 北京时间每天上午10点运行
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     # ⚠️ 试用版说明 / Trial Mode
     # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -37,7 +38,7 @@ on:
     #
     - cron: "33 * * * *"
 
-  workflow_dispatch:
+  workflow_dispatch: # 保留这行，用来手动测试
 
 concurrency:
   group: crawler-${{ github.ref_name }}
